@@ -22,3 +22,9 @@ npx tailwindcss init -p
 
 npm install -D @tailwindcss/forms
 npm install -D @tailwindcss/typography
+
+npm install react-router-dom
+
+"Add airbnb/hooks rules to eslint"
+
+"Create .prettierrc.json file for custom style overrides"
