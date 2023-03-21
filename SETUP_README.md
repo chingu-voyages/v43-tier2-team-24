@@ -6,3 +6,5 @@ npm create vite@latest .
 - JavaScript
 
 npm init @eslint/config
+
+npm install --save-dev --save-exact prettier
