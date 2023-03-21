@@ -12,3 +12,5 @@ npm install --save-dev --save-exact prettier
 npm install --save-dev eslint-plugin-prettier
 
 npm install --save-dev eslint-config-prettier
+
+"Disable no-extraneous-dependencies rule from import rules package"
