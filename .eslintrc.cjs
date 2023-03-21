@@ -17,6 +17,7 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "prettier/prettier": "error",
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "import/no-extraneous-dependencies": "off",
+    "global-require": "off",
   },
 };
