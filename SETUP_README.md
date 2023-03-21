@@ -4,3 +4,5 @@ npm create vite@latest .
 
 - React
 - JavaScript
+
+npm init @eslint/config
