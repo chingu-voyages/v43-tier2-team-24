@@ -62,6 +62,8 @@ This document outlines the steps taken to create the base configuration for the 
 
 12. Create a `.prettierrc.json` file for custom style overrides.
 
+13. Run eslint and prettier on exising files. Clean and delete some files. Create basic folder structure.
+
 ## Notes
 
 1. Everyone is welcome to add dependencies or libraries that all team may benefit from. Even change some of the current setup configuration. But if it's something too subjective or opinionated, please consult with the rest of the team first. (Stuff like prettier or eslint styles, etc...)
