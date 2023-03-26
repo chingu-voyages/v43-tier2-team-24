@@ -52,7 +52,9 @@ This document outlines the steps taken to create the base configuration for the 
    npm install -D @tailwindcss/typography
    ```
 
-10. Install `react-router-dom` by running `npm install react-router-dom`.
+## The following step (Step #10) is no longer necessary as it was reverted in a future step
+
+10. ~~Install `react-router-dom` by running `npm install react-router-dom`.~~
 
     ```
     npm install react-router-dom
@@ -63,6 +65,8 @@ This document outlines the steps taken to create the base configuration for the 
 12. Create a `.prettierrc.json` file for custom style overrides.
 
 13. Run eslint and prettier on exising files. Clean and delete some files. Create basic folder structure.
+
+14. Uninstall `react-router-dom` by running `npm uninstall react-router-dom` (**Only applies if the dependency `react-router-dom` was installed**)
 
 ## Notes
 
