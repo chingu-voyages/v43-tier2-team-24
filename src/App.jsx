@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./components/Header";
 import Board from "./components/Board";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="relative">
       <Header />
       <Board />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
