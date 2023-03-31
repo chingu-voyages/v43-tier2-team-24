@@ -1,5 +1,4 @@
 import React from "react";
-
 import HeaderButton from "./HeaderButton";
 
 function Header() {
@@ -8,7 +7,7 @@ function Header() {
       className="absolute min-w-full
       h-20 flex justify-between items-center gap-5 px-8"
     >
-      <div className="flex self-center gap-x-5"></div>
+      <div className="flex self-center gap-x-5" />
       <div>
         <h1 className="text-3xl font-bold">Team Name</h1>
       </div>
