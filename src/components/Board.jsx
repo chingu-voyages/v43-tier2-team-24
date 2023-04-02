@@ -1,5 +1,6 @@
 import React from "react";
 import Draggable from "react-draggable";
+import DragAndDrop from "./DragAndDrop";
 import WidgetButton from "./WidgetButton";
 
 function Board() {
