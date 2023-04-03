@@ -32,7 +32,7 @@ function Header() {
       )}
       <button
         type="button"
-        className="fixed right-4 top-4 transition-all duration-300 z-50"
+        className="fixed right-6 top-6 transition-all duration-300 z-50"
         onClick={() => {
           setHideHeader(!hideHeader);
         }}
