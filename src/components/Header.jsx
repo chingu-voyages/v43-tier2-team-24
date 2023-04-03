@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 
 import GenericButton from "./GenericButton";
+import Modal from "./Modal";
 
 function Header() {
   const [showSettingsModal, setShowSettingsModal] = useState(false);
@@ -11,7 +12,7 @@ function Header() {
   return (
     <>
       {!hideHeader && (
-        <nav className="sticky top-0 z-40 shadow-md py-3 bg-slate-700">
+        <nav className="sticky top-0 z-30 shadow-md py-3 bg-slate-700">
           <div className="container mx-auto px-4 py-2 flex justify-between items-center">
             <div>
               {/* Left side buttons can be added here if we ever need them */}
@@ -32,7 +33,7 @@ function Header() {
       )}
       <button
         type="button"
-        className="fixed right-6 top-6 transition-all duration-300 z-50"
+        className="fixed right-6 top-6 transition-all duration-300 z-40"
         onClick={() => {
           setHideHeader(!hideHeader);
         }}
@@ -43,7 +44,20 @@ function Header() {
           <FiChevronUp size="2rem" color="white" />
         )}
       </button>
-      {/* Modals go here */}
+      <Modal
+        title="Settings"
+        show={showSettingsModal}
+        onHide={() => setShowSettingsModal(false)}
+      >
+        <h3>Epic Settings Test!</h3>
+      </Modal>
+      <Modal
+        title="Background"
+        show={showBackgroundModal}
+        onHide={() => setShowBackgroundModal(false)}
+      >
+        <h3>Epic Background Test!</h3>
+      </Modal>
     </>
   );
 }
