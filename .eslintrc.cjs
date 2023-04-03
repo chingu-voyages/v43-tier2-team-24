@@ -20,5 +20,6 @@ module.exports = {
     "prettier/prettier": "error",
     "import/no-extraneous-dependencies": "off",
     "global-require": "off",
+    "react/prop-types": "off",
   },
 };
