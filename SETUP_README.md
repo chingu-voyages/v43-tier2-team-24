@@ -68,6 +68,10 @@ This document outlines the steps taken to create the base configuration for the 
 
 14. Uninstall `react-router-dom` by running `npm uninstall react-router-dom` (**Only applies if the dependency `react-router-dom` was installed**)
 
+15. Install `gh-pages` dev dependency so we can do some test deploys on the gh-pages branch
+
+16. Add corresponding scripts to `package.json` to make use of the `gh-pages` dev dependency
+
 ## Notes
 
 1. Everyone is welcome to add dependencies or libraries that all team may benefit from. Even change some of the current setup configuration. But if it's something too subjective or opinionated, please consult with the rest of the team first. (Stuff like prettier or eslint styles, etc...)
