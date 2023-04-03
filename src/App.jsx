@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Board from "./components/Board";
-// import Footer from "./components/Footer";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Sidebar />
       <Board />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
