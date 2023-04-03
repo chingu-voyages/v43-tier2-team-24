@@ -1,21 +1,50 @@
-import React from "react";
-import HeaderButton from "./HeaderButton";
+import React, { useState } from "react";
+import { FiChevronUp, FiChevronDown } from "react-icons/fi";
+
+import GenericButton from "./GenericButton";
 
 function Header() {
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [showBackgroundModal, setShowBackgroundModal] = useState(false);
+  const [hideHeader, setHideHeader] = useState(false);
+
   return (
-    <header
-      className="absolute min-w-full
-      h-20 flex justify-between items-center gap-5 px-8"
-    >
-      <div className="flex self-center gap-x-5" />
-      <div>
-        <h1 className="text-3xl font-bold">Team Name</h1>
-      </div>
-      <div className="flex self-center gap-x-5">
-        <HeaderButton label="Settings" />
-        <HeaderButton label="Background" />
-      </div>
-    </header>
+    <>
+      {!hideHeader && (
+        <nav className="sticky top-0 z-40 shadow-md py-3 bg-slate-700">
+          <div className="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div>
+              {/* Left side buttons can be added here if we ever need them */}
+            </div>
+            <h1 className="font-semibold text-xl text-white">V43-T2-Team24</h1>
+            <div className="flex space-x-4">
+              <GenericButton
+                label="Settings"
+                onClick={() => setShowSettingsModal(true)}
+              />
+              <GenericButton
+                label="Background"
+                onClick={() => setShowBackgroundModal(true)}
+              />
+            </div>
+          </div>
+        </nav>
+      )}
+      <button
+        type="button"
+        className="fixed right-4 top-4 transition-all duration-300 z-50"
+        onClick={() => {
+          setHideHeader(!hideHeader);
+        }}
+      >
+        {hideHeader ? (
+          <FiChevronDown size="2rem" color="black" />
+        ) : (
+          <FiChevronUp size="2rem" color="white" />
+        )}
+      </button>
+      {/* Modals go here */}
+    </>
   );
 }
 

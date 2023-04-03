@@ -5,7 +5,7 @@ import Board from "./components/Board";
 
 function App() {
   return (
-    <div className="relative">
+    <div className="relative flex flex-col min-h-screen">
       <Header />
       <Board />
       {/* <Footer /> */}
