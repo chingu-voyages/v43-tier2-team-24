@@ -5,8 +5,8 @@ import react from "@vitejs/plugin-react";
 // added 'server: port 3000' instead of default port 5173 for futureproofing.
 export default defineConfig({
   plugins: [react()],
+  base: "/v43-tier2-team-24/",
   server: {
-    base: "/v43-tier2-team-24/",
     port: 3000,
   },
 });
