@@ -4,6 +4,8 @@ import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 import GenericButton from "./GenericButton";
 import Modal from "./Modal";
 
+import { displayName } from "../data/appMetadata.json";
+
 function Header() {
   const [showSettingsModal, setShowSettingsModal] = useState(false);
   const [showBackgroundModal, setShowBackgroundModal] = useState(false);
@@ -17,7 +19,7 @@ function Header() {
             <div>
               {/* Left side buttons can be added here if we ever need them */}
             </div>
-            <h1 className="font-semibold text-xl text-white">V43-T2-Team24</h1>
+            <h1 className="font-semibold text-2xl text-white">{displayName}</h1>
             <div className="flex space-x-4">
               <GenericButton
                 label="Settings"
