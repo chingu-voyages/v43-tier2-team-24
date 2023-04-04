@@ -16,22 +16,6 @@ function Sidebar() {
     <SidebarButton Icon={FiHeart} label="Weather" />,
   ]);
 
-  return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-      <div className="fixed left-4 top-32 flex flex-col space-y-1">
-        <SortableContext
-          items={widgetButtons}
-          strategy={verticalListSortingStrategy}
-        >
-          {/* We need components that use the useSortable hook */}
-          {widgetButtons.map((widgetButton) => (
-            <SortableItem key={widgetButton} id={widgetButton} />
-          ))}
-        </SortableContext>
-      </div>
-    </DndContext>
-  );
-
   function handleDragEnd(event) {
     const { active, over } = event;
 
@@ -46,6 +30,23 @@ function Sidebar() {
       });
     }
   }
+
+  return (
+    // eslint-disable-next-line react/jsx-no-bind
+    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+      <div className="fixed left-4 top-32 flex flex-col space-y-1">
+        <SortableContext
+          items={widgetButtons}
+          strategy={verticalListSortingStrategy}
+        >
+          {/* We need components that use the useSortable hook */}
+          {widgetButtons.map((widgetButton) => (
+            <SortableItem key={widgetButton} id={widgetButton} />
+          ))}
+        </SortableContext>
+      </div>
+    </DndContext>
+  );
 }
 
 export default Sidebar;
