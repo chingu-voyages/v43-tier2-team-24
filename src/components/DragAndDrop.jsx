@@ -63,7 +63,7 @@ function DragAndDrop() {
   }, [positions]);
 
   return hasLoaded ? (
-    <div className="min-h-screen min-w-full static border-8">
+    <div className="static min-h-screen border-8">
       {texts.map((item) => {
         return (
           <Draggable
@@ -81,7 +81,7 @@ function DragAndDrop() {
           >
             <div ref={nodeRef}>
               <div
-                className="bg-blue-300 p-2 w-80 m-1 cursor-move"
+                className="relative bg-blue-300 p-2 w-80 m-1 cursor-move"
                 id={item[7]}
               >
                 {item}

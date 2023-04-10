@@ -3,7 +3,7 @@ import DragAndDrop from "./DragAndDrop";
 
 function Board() {
   return (
-    <div className="min-h-screen">
+    <div className="">
       <DragAndDrop />
     </div>
   );

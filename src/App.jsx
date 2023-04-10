@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="relative flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-screen overflow-x-hidden scrollbar-none">
       <Header />
       <Sidebar />
       <Board />
