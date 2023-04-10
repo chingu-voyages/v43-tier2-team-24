@@ -75,6 +75,12 @@ function DragAndDrop() {
                 : { x: positions[item[7]].x, y: positions[item[7]].y }
             }
             position={null}
+            bounds={{
+              left: 0,
+              top: 0,
+              right: window.innerWidth,
+              bottom: window.innerHeight,
+            }}
             key={item[7]}
             nodeRef={nodeRef}
             onStop={handleStop}
