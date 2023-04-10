@@ -29,7 +29,7 @@
 
 // export default DragAndDrop;
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Draggable from "react-draggable";
 
 const texts = ["Widget 1", "Widget 2", "Widget 3"];
@@ -63,15 +63,15 @@ function DragAndDrop() {
   }, [positions]);
 
   return hasLoaded ? (
-    <div className="relative border-4 border-orange">
+    <div className="min-h-screen min-w-full static border-8">
       {texts.map((item) => {
         return (
           <Draggable
             defaultPosition={
               positions === null
-                ? { x: 0, y: 0 }
+                ? { x: 300, y: 100 }
                 : !positions[item[7]]
-                ? { x: 0, y: 0 }
+                ? { x: 300, y: 100 }
                 : { x: positions[item[7]].x, y: positions[item[7]].y }
             }
             position={null}
@@ -81,7 +81,7 @@ function DragAndDrop() {
           >
             <div ref={nodeRef}>
               <div
-                className="relative bg-darkblue p-2 w-2/5 m-1 cursor-move"
+                className="bg-blue-300 p-2 w-80 m-1 cursor-move"
                 id={item[7]}
               >
                 {item}
