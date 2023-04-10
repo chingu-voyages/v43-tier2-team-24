@@ -32,7 +32,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Draggable from "react-draggable";
 
-const texts = ["Widget 1", "Widget 2", "Widget 3"];
+const widgets = ["Widget 1", "Widget 2", "Widget 3"];
 
 function DragAndDrop() {
   const [positions, setPositions] = useState({});
@@ -64,7 +64,7 @@ function DragAndDrop() {
 
   return hasLoaded ? (
     <div className="static min-h-screen border-8">
-      {texts.map((item) => {
+      {widgets.map((item) => {
         return (
           <Draggable
             defaultPosition={
