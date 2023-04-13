@@ -45,10 +45,11 @@ function DragAndDrop() {
             }
             position={null}
             bounds={{
+              // not optimal way to do this, will find better solution later
               left: 0,
-              top: 0,
+              top: 60 - 60 * item[7],
               right: window.innerWidth,
-              bottom: window.innerHeight,
+              bottom: window.innerHeight - 60 - 60 * (item[7] - 1),
             }}
             key={item[7]}
             nodeRef={nodeRef}
@@ -63,6 +64,7 @@ function DragAndDrop() {
               </div>
             </div>
           </Draggable>
+          
         );
       })}{" "}
     </div>
