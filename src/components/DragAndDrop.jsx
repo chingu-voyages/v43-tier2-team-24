@@ -8,16 +8,6 @@ function DragAndDrop() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const nodeRef = useRef(null);
 
-  useEffect(() => {
-    const existingDivPositions = JSON.parse(
-      localStorage.getItem("positions_div")
-    );
-    setPositions(existingDivPositions);
-    setHasLoaded(true);
-    console.log(existingDivPositions);
-    console.log(`has loaded`);
-  }, []);
-
   function handleStop(e, data) {
     const dummyPositions = { ...positions };
     const itemId = e.target.id;
@@ -28,7 +18,17 @@ function DragAndDrop() {
   }
 
   useEffect(() => {
-    localStorage.setItem(`positions_div`, JSON.stringify(positions));
+    const existingDivPositions = JSON.parse(
+      window.localStorage.getItem("positions_div")
+    );
+    setPositions(existingDivPositions);
+    setHasLoaded(true);
+    console.log(existingDivPositions);
+    console.log(`has loaded`);
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem(`positions_div`, JSON.stringify(positions));
   }, [positions]);
 
   return hasLoaded ? (
@@ -37,18 +37,17 @@ function DragAndDrop() {
         return (
           <Draggable
             defaultPosition={
-              positions === null
-                ? { x: 300, y: 100 }
-                : !positions[item[7]]
+              positions === null || !positions[item[7]]
                 ? { x: 300, y: 100 }
                 : { x: positions[item[7]].x, y: positions[item[7]].y }
             }
             position={null}
             bounds={{
+              // item[7] is literally the Widget "#", e.g. 1, 2, 3
               // not optimal way to do this, will find better solution later
               left: 0,
               top: 60 - 60 * item[7],
-              right: window.innerWidth,
+              right: window.innerWidth - 320 * (item[7] - 1), // needs tweeking
               bottom: window.innerHeight - 60 - 60 * (item[7] - 1),
             }}
             key={item[7]}
@@ -64,7 +63,6 @@ function DragAndDrop() {
               </div>
             </div>
           </Draggable>
-          
         );
       })}{" "}
     </div>
