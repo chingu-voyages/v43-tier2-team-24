@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Draggable from "react-draggable";
 
-const widgets = ["Widget 1", "Widget 2", "Widget 3"];
+const widgets = ["Sticky Note", "Clock", "Weather"];
 
 function DragAndDrop() {
   const [positions, setPositions] = useState({});
@@ -37,27 +37,29 @@ function DragAndDrop() {
         return (
           <Draggable
             defaultPosition={
-              positions === null || !positions[item[7]]
+              positions === null || !positions[widgets.lastIndexOf(item) + 1]
                 ? { x: 300, y: 100 }
-                : { x: positions[item[7]].x, y: positions[item[7]].y }
+                : {
+                    x: positions[widgets.lastIndexOf(item) + 1].x,
+                    y: positions[widgets.lastIndexOf(item) + 1].y,
+                  }
             }
             position={null}
             bounds={{
-              // item[7] is literally the Widget "#", e.g. 1, 2, 3
-              // not optimal way to do this, will find better solution later
+              // widgets.lastIndexOf(item) is the index position of 'item' widget
               left: 0,
-              top: 60 - 60 * item[7],
-              right: window.innerWidth - 320 * (item[7] - 1), // needs tweeking
-              bottom: window.innerHeight - 60 - 60 * (item[7] - 1),
+              top: 44 - 44 * (widgets.lastIndexOf(item) + 1),
+              right: window.innerWidth - 360,
+              bottom: window.innerHeight - 60 - 44 * widgets.lastIndexOf(item),
             }}
-            key={item[7]}
+            key={widgets.lastIndexOf(item) + 1}
             nodeRef={nodeRef}
             onStop={handleStop}
           >
             <div ref={nodeRef}>
               <div
                 className="relative bg-blue-300 p-2 w-80 m-1 cursor-move"
-                id={item[7]}
+                id={widgets.lastIndexOf(item) + 1}
               >
                 {item}
               </div>
