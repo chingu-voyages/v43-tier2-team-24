@@ -9,8 +9,8 @@ function DragAndDrop() {
   const nodeRef = useRef(null);
 
   function handleStop(e, data) {
-    const dummyPositions = { ...positions };
-    const itemId = e.target.id;
+    let dummyPositions = { ...positions };
+    let itemId = e.target.id;
     dummyPositions[itemId] = {};
     dummyPositions[itemId].x = data.x;
     dummyPositions[itemId].y = data.y;
@@ -23,12 +23,12 @@ function DragAndDrop() {
     );
     setPositions(existingDivPositions);
     setHasLoaded(true);
-    console.log(existingDivPositions);
-    console.log(`has loaded`);
+    // console.log(existingDivPositions);
+    // console.log(`has loaded`);
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(`POSITIONS_DIV`, JSON.stringify(positions));
+    window.localStorage.setItem("POSITIONS_DIV", JSON.stringify(positions));
   }, [positions]);
 
   return hasLoaded ? (
@@ -44,7 +44,6 @@ function DragAndDrop() {
                     y: positions[widgets.lastIndexOf(item) + 1].y,
                   }
             }
-            position={null}
             bounds={{
               // widgets.lastIndexOf(item) is the index position of 'item' widget
               left: 0,
@@ -52,6 +51,7 @@ function DragAndDrop() {
               right: window.innerWidth - 360,
               bottom: window.innerHeight - 60 - 44 * widgets.lastIndexOf(item),
             }}
+            position={null}
             key={widgets.lastIndexOf(item) + 1}
             nodeRef={nodeRef}
             onStop={handleStop}
