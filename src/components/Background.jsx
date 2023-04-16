@@ -3,7 +3,7 @@ import cottage from "../assets/img/cottage.mp4";
 
 function Background() {
   return (
-    <div className="">
+    <div>
       <video
         autoPlay
         muted
