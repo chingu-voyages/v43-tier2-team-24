@@ -19,7 +19,7 @@ function DragAndDrop() {
 
   useEffect(() => {
     const existingDivPositions = JSON.parse(
-      window.localStorage.getItem("positions_div")
+      window.localStorage.getItem("POSITIONS_DIV")
     );
     setPositions(existingDivPositions);
     setHasLoaded(true);
@@ -28,7 +28,7 @@ function DragAndDrop() {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem(`positions_div`, JSON.stringify(positions));
+    window.localStorage.setItem(`POSITIONS_DIV`, JSON.stringify(positions));
   }, [positions]);
 
   return hasLoaded ? (
