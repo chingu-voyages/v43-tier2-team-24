@@ -7,7 +7,7 @@ import { displayName } from "../data/appMetadata.json";
 
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white mt-auto py-6">
+    <footer className="bg-gray-800 text-white mt-auto py-6 z-20">
       <div className="container mx-auto px-4">
         <div className="flex justify-center">
           <div className="font-semibold text-xl">{displayName}</div>

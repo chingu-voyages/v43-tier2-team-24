@@ -3,7 +3,7 @@ import DragAndDrop from "./DragAndDrop";
 
 function Board() {
   return (
-    <div className="">
+    <div>
       <DragAndDrop />
     </div>
   );

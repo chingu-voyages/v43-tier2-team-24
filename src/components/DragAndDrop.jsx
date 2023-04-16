@@ -32,7 +32,7 @@ function DragAndDrop() {
   }, [positions]);
 
   return hasLoaded ? (
-    <div className="static min-h-screen border-8">
+    <div className="static min-h-screen">
       {widgets.map((item) => {
         return (
           <Draggable
@@ -48,8 +48,8 @@ function DragAndDrop() {
               // widgets.lastIndexOf(item) is the index position of 'item' widget
               left: 0,
               top: 44 - 44 * (widgets.lastIndexOf(item) + 1),
-              right: window.innerWidth - 360,
-              bottom: window.innerHeight - 60 - 44 * widgets.lastIndexOf(item),
+              right: window.innerWidth - 344,
+              bottom: window.innerHeight - 44 - 44 * widgets.lastIndexOf(item),
             }}
             position={null}
             key={widgets.lastIndexOf(item) + 1}

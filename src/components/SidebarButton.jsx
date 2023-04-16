@@ -10,7 +10,7 @@ function SidebarButton({ Icon, label, onClick }) {
       >
         <Icon className="w-6 h-6" />
       </button>
-      <span className="absolute left-0 translate-x-12 bottom-1/2 translate-y-1/2 text-xs text-gray-700 opacity-0 group-hover:opacity-100 transition">
+      <span className="absolute left-0 translate-x-12 bottom-1/2 translate-y-1/2 text-xs text-red-200 opacity-0 group-hover:opacity-100 transition">
         {label}
       </span>
     </div>
